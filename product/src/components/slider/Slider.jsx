@@ -1,10 +1,10 @@
 import React, { useMemo, useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
+import useSelectGesture from "../../store/useSelectGesture";
 
 const Slider = (props) => {
-  const { isModalOpen, setIsModalOpen, setType } = useModal();
-  const { setSelectedItem } = useSelectGesture();
+  const {setSelectedItem} = useSelectGesture
 
   const { slides } = props;
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,8 +29,6 @@ const Slider = (props) => {
     <div className="max-w-[1400px] h-[580px] w-full m-auto py-16 px-4 relative group">
       <button
         onClick={() => {
-          setIsModalOpen(!isModalOpen);
-          setType("EDIT");
           setSelectedItem(slides[currentIndex]);
         
         }}

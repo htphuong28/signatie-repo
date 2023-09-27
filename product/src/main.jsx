@@ -8,10 +8,13 @@ import Navbar from './components/navbar/Navbar.jsx'
 import Hero from './components/hero/Hero.jsx'
 import Register from './pages/register/Register.jsx'
 import Homepage from './pages/home/Homepage.jsx'
+import Login from './pages/login/Login.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Homepage/>
+    {/* <Homepage/> */}
+    {/* <Register/> */}
+    <Login/>
   </React.StrictMode>,
 )

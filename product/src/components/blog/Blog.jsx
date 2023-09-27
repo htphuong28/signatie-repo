@@ -11,8 +11,11 @@ import {
 import { db } from "../../firebase/firebase.config";
 import React, { useEffect, useState } from "react";
 import BlogCard from "./BlogCard";
+import LoadingDots from "../loading/LoadingDots";
+
 
 const Blog = () => {
+
 
   const [isLoading, setIsLoading] = useState(false)
   const [newsList, setNewsList] = useState([])
@@ -46,7 +49,7 @@ const Blog = () => {
   )
 
   if (isLoading) {
-    return <div>Loading...</div>
+    return <LoadingDots/>
   }
 
 
@@ -55,7 +58,6 @@ const Blog = () => {
 
 
   return (
-    <>
       <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20">
         <div className="container">
           <div className="flex flex-wrap -mx-4">
@@ -79,7 +81,7 @@ const Blog = () => {
             {newsList?.map((item, index) => {
 
               return (
-                <React.Fragment key={index} className="flex flex-1 w-auto">
+                <div key={index} className="flex flex-1 w-[300px]">
 
                 <BlogCard
                 keyPost={index}
@@ -89,7 +91,7 @@ const Blog = () => {
                   linkPost={item.link}
 
                 />
-                </React.Fragment>
+                </div>
               )
             })}
 
@@ -98,7 +100,6 @@ const Blog = () => {
           </div>
         </div>
       </section>
-    </>
   );
 };
 
