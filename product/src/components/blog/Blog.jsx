@@ -53,10 +53,6 @@ const Blog = () => {
   }
 
 
-
-  console.log(newsList)
-
-
   return (
       <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20">
         <div className="container">
@@ -95,7 +91,6 @@ const Blog = () => {
               )
             })}
 
-            //quote, slider, search hien modal
 
           </div>
         </div>

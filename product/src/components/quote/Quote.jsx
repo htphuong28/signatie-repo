@@ -8,9 +8,7 @@ const Quote = () => {
 
     const getQuote = async ()=> {
         const quoteResponse = await axios.get(quoteURL)
-        const {data} = quoteResponse
         setTodayQuote(quoteResponse?.data)
-        console.log(quoteResponse.data)
     }
 
     useEffect(() => {

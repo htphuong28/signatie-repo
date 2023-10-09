@@ -6,13 +6,13 @@ export const useAccount = create(
     (set) => ({
       // stateName
       userInfo: {
-        displayName: 'Ha Phuong',
-        email: 'HaPhuong@gmail.com',
+        displayName: '',
+        email: '',
         password: '',
         profileImageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTo4XV_JS6I3DKd2ED8-MXbUBOu1tZ7qr_0g&usqp=CAU',
         accessToken: '',
         active: false,
-        uid : 28022006
+        uid: ''
       },
       // function to update value of stateName
       // upadateUserInfo
@@ -23,10 +23,12 @@ export const useAccount = create(
             ...userInfo,
           },
         })),
+
+      
     }),
     {
       name: 'useAccount', // unique name
-      storage: createJSONStorage(() => localStorage), // (optional) by default, 'localStorage' is used
+      storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
     }
   )
 )

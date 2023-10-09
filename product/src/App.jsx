@@ -1,8 +1,15 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import Router from './router/Index'
 
 const App = () => {
+
+
+
   return (
-    <div></div>
+    <BrowserRouter>
+      <Router/>
+    </BrowserRouter>
   )
 }
 

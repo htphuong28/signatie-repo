@@ -7,9 +7,10 @@ import {
   GoogleAuthProvider,
   signInWithEmailAndPassword
 } from "firebase/auth";
-
+import {useNavigate} from 'react-router-dom'
 
 const Register = () => {
+  const navigate = useNavigate()
 
   const [signUpInfo, setSignUpInfo] = useState(
     {
@@ -19,7 +20,12 @@ const Register = () => {
     }
   )
 
-  const [isShowPass, setShowPass] = useState(0)
+  const [isShowPass, setShowPass] = useState(
+    {
+      password: false,
+      reEnterPassword: false,
+    }
+  )
 
   const handleSignUp = async (e) => {
     e.preventDefault()
@@ -40,8 +46,9 @@ const Register = () => {
         signUpInfo.password
       )
       const user = userCredential.user
-      alert("Dang nhap thanh cong")
+      alert("Dang ky thanh cong")
       console.log(user)
+      navigate('/login')
     } catch (error) {
       alert(error)
     }
@@ -92,14 +99,16 @@ const Register = () => {
           >
             Password
           </label>
-          <div className="w-full" aria-label="input-password-toggle">
-            <div className="relative w-full">
+          <div 
+          className="h-14 w-full flex flex-1 flex-row items-center justify-between 
+          border rounded-lg outline-none border-slate-200 focus:border-blue-500 transition-all bg-transparent" aria-label="input-password-toggle">
+            
               <input
                 value={signUpInfo.password}
                 id="password"
-                type={(isShowPass ? "text" : "password")}
+                type={(isShowPass.password ? "text" : "password")}
                 name="password"
-                className="w-full p-4 pr-12 transition-all bg-transparent border rounded-lg outline-none border-slate-200 focus:border-blue-500"
+                className=" h-14 flex flex-1 px-4 border-0 outline-none"
                 placeholder="Enter your password"
                 required
                 onChange={(e) => setSignUpInfo({
@@ -107,18 +116,30 @@ const Register = () => {
                   password: e.target.value,
                 })}
               />
-              <span className="absolute cursor-pointer text-slate-400 right-4 top-2/4 -translate-y-2/4"
-                onClick={() => setShowPass(!isShowPass)}
+              <button 
+              className='flex justify-center items-center cursor-pointer text-slate-400 mx-2'
+              onClick={(e) => 
+                {
+                  e.preventDefault()
+                setShowPass({
+                ...isShowPass,
+                password: !isShowPass.password
+              })}
+            }
               >
-                {(isShowPass ?
+              <div             
+              >
+                {(isShowPass.password ?
                   <span>
                     <AiOutlineEye />
                   </span> : <span> <AiOutlineEyeInvisible /> </span>
                 )}
 
 
-              </span>
-            </div>
+              </div>
+              </button>
+              
+            
           </div>
 
         </div>
@@ -129,18 +150,58 @@ const Register = () => {
           >
             Re-enter Password
           </label>
-          <input
-            id="repassword"
-            type="password"
-            className="w-full p-4 bg-transparent border border-gray-200 rounded-lg outline-none"
-            placeholder="Enter your password"
-          />
+          <div 
+          className="h-14 w-full flex flex-1 flex-row items-center justify-between 
+          border rounded-lg outline-none border-slate-200 focus:border-blue-500 transition-all bg-transparent" aria-label="input-password-toggle">
+            
+              <input
+                value={signUpInfo.reEnterPassword}
+                id="repassword"
+                type={(isShowPass.reEnterPassword ? "text" : "password")}
+                name="repassword"
+                className="h-14 flex flex-1 px-4 "
+                placeholder="Re-enter your password"
+                required
+                onChange={(e) => setSignUpInfo({
+                  ...signUpInfo,
+                  reEnterPassword: e.target.value,
+                })}
+              />
+              <button 
+              className='flex justify-center items-center cursor-pointer text-slate-400 mx-2'
+              onClick={(e) => 
+                {
+                  e.preventDefault()
+                setShowPass({
+                ...isShowPass,
+                reEnterPassword: !isShowPass.reEnterPassword
+              })}
+            }
+              >
+              <div             
+              >
+                {(isShowPass.reEnterPassword ?
+                  <span>
+                    <AiOutlineEye />
+                  </span> : <span> <AiOutlineEyeInvisible /> </span>
+                )}
+
+
+              </div>
+              </button>
+              
+            
+          </div>
+          
         </div>
         <div className="flex items-center justify-end mb-5 text-slate-400">
           <p>Already have an account?</p>
-          <a href="#" className="text-blue-500 underline">
+          <button  
+          className="text-blue-500 underline"
+          onClick={()=>navigate('/login')}
+          >
             Sign In
-          </a>
+          </button>
         </div>
         <button
           type="submit"
@@ -149,13 +210,7 @@ const Register = () => {
         >
           Create an account
         </button>
-        <button
-          type="submit"
-          className="inline-flex w-full items-center justify-center px-8 py-4 font-sans font-semibold tracking-wide text-white bg-red-500 rounded-lg h-[40px] my-1"
-          onClick={(e) => handleSignUpWithGoogle(e)}
-        >
-          Register with Google
-        </button>
+        
       </form>
     </div>
   )

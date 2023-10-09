@@ -38,10 +38,11 @@ const Slider = (props) => {
       </button>
       <div className="w-full h-full rounded-2xl bg-center bg-cover duration-500">
         <video
-          src={slides[currentIndex]?.videoUrl}
+          src={slides[currentIndex]?.videoURL}
           className="w-full h-full rounded-2xl"
-          autoPlay
+          autoPlay = {false}
           loop
+          controls
           muted
         ></video>
       </div>

@@ -58,7 +58,7 @@ const ChatPopup = () => {
             const payload = {
                 content: content,
                 createdAt: serverTimestamp(),
-                userName: userInfo.displayName,
+                userName: userInfo.displayName !==null ? userInfo.displayName : userInfo.email,
                 id: userInfo.uid
             }
 
@@ -72,7 +72,7 @@ const ChatPopup = () => {
 
     }
 
-
+    console.log(userInfo.displayName)
 
 
     return (
