@@ -4,7 +4,7 @@ import Banner from '../../assets/img/Banner.png'
 const Hero = () => {
   return (
     <div>
-        <div className="hero h-screen w-screen" style={{backgroundImage: Banner}}>
+        <div className="hero h-screen w-screen bg-[url('../../assets/img/Banner.png')]" >
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
@@ -14,6 +14,7 @@ const Hero = () => {
                 </div>
             </div>
         </div>
+        <img src={Banner} alt="" />
     </div>
   )
 }

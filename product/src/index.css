@@ -9,8 +9,10 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .container-snap {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 
@@ -24,22 +26,23 @@
 @layer base {
     h1 {
         @apply font-bold text-[40px]
-     }
+    }
 
-     a {
+    a {
         @apply font-light text-white border-b-[1.5px] border-solid border-[#5581d4] no-underline
-     } 
+    }
 
-     a:hover {
+    a:hover {
         @apply font-light text-white border-b-[2px] border-solid border-white no-underline
-     }
-     input[type='text'] {
-        @apply text-white p-[5px] border-none font-[18px] outline-none border-b-[2px] border-solid border-white text-zinc-800
-     }
+    }
 
-        input[type='text']:focus {
-            @apply text-zinc-800  border-none font-[18px] bg-[#fff] outline-none border-b-[2px] border-solid
-        }
+    input[type='text'] {
+        @apply text-white p-[5px] border-none font-[18px] outline-none border-b-[2px] border-solid border-white text-zinc-800
+    }
+
+    input[type='text']:focus {
+        @apply text-zinc-800 border-none font-[18px] bg-[#fff] outline-none border-b-[2px] border-solid
+    }
 }
 
 @layer components {
@@ -47,14 +50,16 @@
     .body {
         @apply m-0 p-0 bg-[#0a1821] h-[100vh] w-[100vw] text-white text-center
     }
+
     .notfound-copy {
-      @apply text-white fixed top-[25px] right-[10%] text-right
+        @apply text-white fixed top-[25px] right-[10%] text-right
     }
+
     .search-icon {
         @apply inline-block
     }
 
-    .starry-sky{
+    .starry-sky {
         @apply block w-[100vw] h-[100vh] bg-cover
     }
 
@@ -65,7 +70,8 @@
     .all-stars {
         @apply animate-pulse
     }
+
     .menu-icons {
         @apply h-5 w-5
-    } 
-  }
+    }
+}

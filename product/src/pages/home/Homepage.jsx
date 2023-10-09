@@ -10,6 +10,8 @@ import Slider from '../../components/slider/Slider'
 import GestureSlider from '../../components/gesture/GestureSlider'
 import { useAccount } from '../../store/useAccount'
 import Hero from '../../components/hero/Hero'
+import Footer from '../../components/footer/Footer'
+
 
 const Homepage = () => {
 
@@ -26,6 +28,7 @@ const Homepage = () => {
         <ChatPopup/>
         <Message />
         <GestureSlider/>
+        <Footer/>
     </div>
   )
 }
