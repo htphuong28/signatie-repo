@@ -23,6 +23,8 @@ const Navbar = () => {
       return item.name.toLowerCase().includes(searchValue.toLowerCase())
     } )
 
+    console.log(e.target.value)
+
     setSearchResult(searchFilter)
   }
 
@@ -41,7 +43,7 @@ const Navbar = () => {
         active: false,
         uid: ''
       })
-      navigate('login')
+      navigate('/login')
       
     } catch (error) {
       alert(error)
@@ -50,6 +52,11 @@ const Navbar = () => {
   }
 
   
+  useEffect(() => {
+    if(searchValue==='' || !searchValue) {
+      setSearchResult([])
+    }
+  }, [searchValue])
   
 
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -142,7 +149,7 @@ const Navbar = () => {
                                 })
                               }}
                             key={index} 
-                            className='bg-slate-600 flex flex-1 flex-col justify-start items-start gap-y-2 rounded-md my-2 w-full text-start'>
+                            className='bg-slate-200 flex flex-1 flex-col justify-start items-start gap-y-2 rounded-md my-2 w-full text-start'>
                               <div className='flex flex-col mt-2 px-2 '>
                                 <p>{item.name}</p>
                                 <p>{item.description}</p>

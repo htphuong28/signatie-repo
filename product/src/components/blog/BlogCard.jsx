@@ -2,12 +2,14 @@ import React from 'react'
 
 
 const BlogCard = ({ image, date, CardTitle, CardDescription,linkPost }) => {
+
+  console.log(image)
     return (
       <>
         <div className="w-full px-4 md:w-1/2 lg:w-1/3">
-          <div className="mx-auto mb-10 max-w-[370px]">
-            <div className="mb-8 overflow-hidden rounded">
-              <img src={image} alt="" className="w-full" />
+          <div className="mx-auto mb-10 max-w-[400px]">
+            <div className="mb-8 rounded">
+              <img src={image} alt="" className="w-full " />
             </div>
             <div>
               {date && (
@@ -23,7 +25,7 @@ const BlogCard = ({ image, date, CardTitle, CardDescription,linkPost }) => {
                   {CardTitle}
                 </a>
               </h3>
-              <p className="text-base text-body-color">{CardDescription}</p>
+              <p className="text-base text-body-color text-justify">{CardDescription}</p>
             </div>
           </div>
         </div>

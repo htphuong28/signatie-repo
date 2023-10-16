@@ -1,5 +1,6 @@
 import React from 'react'
-import { FaPenToSquare, FaReadme, } from 'react-icons/fa6' 
+import { FaReadme } from 'react-icons/fa' 
+import {AiOutlineEdit} from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -29,7 +30,7 @@ const Menu = () => {
             </li>
             <li>
                 <button>
-                <FaPenToSquare className='menu-icons'/>
+                <AiOutlineEdit className='menu-icons'/>
                 Bài viết
                 </button>
             </li>

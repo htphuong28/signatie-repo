@@ -42,9 +42,11 @@ const Blog = () => {
     }
   }
 
+  console.log(newsList)
   useEffect(
     () => {
       getNews()
+      return () => setNewsList([])
     }, []
   )
 
@@ -73,11 +75,11 @@ const Blog = () => {
             </div>
           </div>
 
-          <div className="flex flex-wrap -mx-4">
+          <div className="flex flex-wrap -mx-4 flex-1">
             {newsList?.map((item, index) => {
 
               return (
-                <div key={index} className="flex flex-1 w-[300px]">
+                <div key={index} className="flex flex-1 w-[500px]">
 
                 <BlogCard
                 keyPost={index}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Navbar from '../../components/navbar/Navbar'
 import { useGetData } from '../../store/useGetData'
 import ItemCard from '../../components/blog/ItemCard'
@@ -7,6 +7,7 @@ import ItemCard from '../../components/blog/ItemCard'
 
 const DetailGesture = () => {
     const { gestureData } = useGetData()
+    const navigate = useNavigate()
 
     const location = useLocation()
 
@@ -38,7 +39,9 @@ const DetailGesture = () => {
                             return (
                                 <div key={id} className='h-[200px] w-[300px]' >
                                     <ItemCard imgSrc={item.videoURL} imgTitle={item.name} imgDescription={item.description} imgBtn='Learn later'
-                                        onClick={()=> alert('hello')}
+                                        onClick={()=>navigate('/detail', {
+                                            state: {...item}
+                                        })}
                                     />
                                 </div>
                             )

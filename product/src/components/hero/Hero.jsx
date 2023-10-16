@@ -4,17 +4,17 @@ import Banner from '../../assets/img/Banner.png'
 const Hero = () => {
   return (
     <div>
-        <div className="hero h-screen w-screen bg-[url('../../assets/img/Banner.png')]" >
+        <div className="hero h-screen w-screen bg-name" >
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                <button className="btn btn-primary">Get Started</button>
+                <h1 className="mb-5 text-5xl font-bold">Ngôn ngữ của đôi tay</h1>
+                <p className="mb-5">Signatie là một dự án cá nhân, hướng tới mục tiêu lan tỏa ngôn ngữ đến với tất cả mọi người</p>
+                <button className="btn btn-primary">Tìm hiểu thêm</button>
                 </div>
             </div>
         </div>
-        <img src={Banner} alt="" />
+        
     </div>
   )
 }
