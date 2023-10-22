@@ -12,6 +12,7 @@ import { db } from "../../firebase/firebase.config";
 import React, { useEffect, useState } from "react";
 import BlogCard from "./BlogCard";
 import LoadingDots from "../loading/LoadingDots";
+import LoadingPage from "../../pages/loadingpage/LoadingPage";
 
 
 const Blog = () => {
@@ -51,7 +52,7 @@ const Blog = () => {
   )
 
   if (isLoading) {
-    return <LoadingDots/>
+    return <LoadingPage/>
   }
 
 

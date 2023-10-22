@@ -46,7 +46,7 @@ const GestureSlider = () => {
 
     useEffect(() => {
       
-      if(gestureData.length>=20) return null
+      if(gestureData.length>=20) return undefined
       getGestures()
     }, [])
     

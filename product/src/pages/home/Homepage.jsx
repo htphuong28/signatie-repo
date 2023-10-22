@@ -67,7 +67,7 @@ const Homepage = () => {
 
       </div>
       <Blog />
-      <Quote />
+      {/* <Quote /> */}
       <ChatPopup />
       <Message />
       <GestureSlider />
